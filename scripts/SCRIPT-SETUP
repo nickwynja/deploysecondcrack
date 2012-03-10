@@ -55,3 +55,15 @@ vi /etc/php.ini
 # rm -f apf-current.tar.gz 
 # cd apf-*
 # ./install.shcd /etc/apf
+
+## Defaults
+
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
