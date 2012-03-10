@@ -1,0 +1,55 @@
+# chkconfig: 345 85 15
+# description: Startup script for dropbox daemon
+#
+# processname: dropboxd
+# pidfile: /var/run/dropbox.pid
+#
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+DROPBOX_USERS="blog" 
+
+prog=dropboxd
+lockfile=${LOCKFILE-/var/lock/subsys/dropbox}
+RETVAL=0
+
+start() {
+        echo -n $"Starting $prog"
+        for dbuser in $DROPBOX_USERS; do
+            daemon --user $dbuser /home/$dbuser/.dropbox-dist/dropboxd 
+        done
+
+        RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && touch ${lockfile}
+        return $RETVAL
+}
+
+stop() {
+        echo -n $"Stopping $prog"
+    for dbuser in $DROPBOX_USERS; do
+        killproc /home/$dbuser/.dropbox-dist/dropboxd
+    done
+        RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && rm -f ${lockfile} ${pidfile}
+}
+
+# See how we were called.
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        stop
+        start
+        ;;
+  *)
+        echo $"Usage: $prog {start|stop|restart}"
+        RETVAL=3
+esac
+
+exit $RETVAL
