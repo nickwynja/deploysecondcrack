@@ -10,4 +10,3 @@ sudo chmod +x /etc/init.d/dropbox;
     
 cd /home/blog/;
 wget -O - http://www.dropbox.com/download?plat=lnx.x86 | tar xzf -;
-/home/blog/.dropbox-dist/dropboxd;

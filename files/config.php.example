@@ -11,8 +11,8 @@ date_default_timezone_set('America/New_York'); // Sometimes I hate PHP. This is 
 // Paths
 Updater::$source_path   = '/home/blog/Dropbox/Blog';
 Template::$template_dir = '/home/blog/Dropbox/Blog/templates';
-Updater::$dest_path     = '/var/www/secondcrack/www';
-Updater::$cache_path    = '/var/www/secondcrack/cache';
+Updater::$dest_path     = '/home/blog/secondcrack/www';
+Updater::$cache_path    = '/home/blog/secondcrack/cache';
 Updater::$post_extension = '.md';
 
 // Blog metadata

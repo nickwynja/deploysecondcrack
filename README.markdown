@@ -8,15 +8,15 @@ After creating a Rackspace account and creating a CentOS 6.0 server, SSH into th
     
 This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take a little while to run, maybe 10 minutes, but don't walk away—you'll have to enter `y` a few times when prompted.
 
-## 3. Create 'blog' user account, give it proper permissions
+## 2. Create 'blog' user account, give it proper permissions
 
 **Note:** For ease of setup, we will use the username 'blog'. Changing this to your name will break other deploy scripts.
 
 Create the new user with the command `useradd -d /home/blog -m blog && sudo passwd blog`. Enter the command `visudo` and on line 96 (jump there by typing `:96` in vi) add `blog    ALL=(ALL)       ALL` to give blog `sudo` permission. Once this is done, exit out of the vi text editor by first pressing `esc` then type `:wq` and press enter to save and quit.
 
-## 2. Install Dropbox
+## 3. Install Dropbox
 
-Entering the following command will install Dropbox, the Dropbox CLI, and a service that will give you control of Dropbox using `/etc/init.d/dropbox'.
+Entering the following command will install Dropbox, the Dropbox CLI, and a service that will give you control of Dropbox using `/etc/init.d/dropbox`.
 
     cd ~ ; wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install-dropbox.sh;   . ./install-dropbox.sh
     
@@ -28,3 +28,4 @@ Once you link your account, you should see the `Client successfully linked` mess
 
     wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install-secondcrack.sh; . ./install-secondcrack.sh
 
+After installation, enter the command `/etc/init.d/dropbox start` to start Dropbox.
