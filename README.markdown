@@ -7,19 +7,19 @@ After creating a Rackspace account and initiating a CentOS 6.0 server, SSH into 
 **Note:** For ease of setup, we will use the username 'blog'. Changing this to your name will break other deploy scripts.
 
 - Create the new user with the command `useradd -d /home/blog -m blog && sudo passwd blog`. Enter and confirm your password.
-- Give 'blog' sudo permissions by entering the command `visudo`. On line 90 (jump to the line by typing `:90`) add `blog    ALL=(ALL)    ALL`. To save your new 
+- Give 'blog' sudo permissions by entering the command `visudo`. On line 90 (jump to the line by typing `:90`), hit `i` to go into insert mode and add `blog    ALL=(ALL)    ALL`. Exit out of vi by pressing `esc` then type `:wq` and press enter to save and quit.
 
-## 1. Install Environment, Second Crack and deploysecondcrack
+## 2. Install Environment, Dropbox, Second Crack, and deploysecondcrack
 
- Paste the following command and press enter to make the magic happen:
+ Paste the following command and press enter to make the magic happen. You'll be prompted for your password.
 
     cd ~ && wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install.sh; . ~/install.sh
     
-This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take a little while to run, maybe 5 minutes. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack, and `secondcrackdeploy` will also be deployed.
+This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take about 5 minutes to run. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack, and secondcrackdeploy will also be deployed.
 
-After everything is installed, `/secondcrack/config.php` will be displayed where you need to set `$blog_title`, `$blog_url`, and description of your blog. Press `i` to go into insert mode in Vim to edit your configuration. You can also enter a username and password here if you plan on using the bookmarklets. Exit out of vi by pressing `esc` then type `:wq` and press enter to save and quit.
+After everything is installed, `/secondcrack/config.php` will be displayed where you need to set `$blog_title`, `$blog_url`, and description of your blog. You can also enter a username and password here if you plan on using the bookmarklets.
 
-## 2. Initiate Dropbox
+## 3. Initiate Dropbox
 
 Dropbox is already installed but you need to initiate it and link the server to your account. Enter this command:
 
