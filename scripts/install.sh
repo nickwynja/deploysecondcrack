@@ -4,7 +4,7 @@ yum update;
 
 # Install Apache, PHP, Python, Git, and dependancies
 
-yum install httpd php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686;
+yum install httpd php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
 
 # Start Apache on boot
 
@@ -56,12 +56,15 @@ sudo git clone git://github.com/nickwynja/deploysecondcrack.git;
 
 # Config Apache with default settings
 
-sudo cp /home/blog/secondcrack/files/httpd.conf /etc/httpd/conf/httpd.conf;
+sudo cp /home/blog/deploysecondcrack/files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo service iptables stop;
+sudo rm /etc/httpd/conf.d/welcome.conf;
+sudo chmod o+x /home/blog/;
+
 
 # Config PHP with default settings
 
-sudo cp /home/blog/secondcrack/files/php.ini /etc/php.ini
+sudo cp /home/blog/deploysecondcrack/files/php.ini /etc/php.ini
 
 # Install Second Crack
 
