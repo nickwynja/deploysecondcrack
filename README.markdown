@@ -18,6 +18,6 @@ This script will install `httpd`, `php`, `git`, `inotify-tools` and update/insta
 
 After everything is installed, `/secondcrack/config.php` will be displayed where you need to set `$blog_title`, `$blog_url`, and description of your blog. Press `i` to go into insert mode in Vim to edit your configuration. You can also enter a username and password here if you plan on using the bookmarklets. Exit out of vi by pressing `esc` then type `:wq` and press enter to save and quit.
 
-# Start Dropbox
+## Start Dropbox
 
 After installation, enter the command `/etc/init.d/dropbox start` to start Dropbox. You will be shown a URL you need to copy and paste into your browser to link the server to your account. Make sure you're logged into the account you want to be connected with if you have multiple. Once you link your account, you should see the `Client successfully linked` message. To get back to the command prompt hit ctrl+c. You'll see the message `Session terminated, killing shell... ...killed.` but that's OK, Dropbox should still be running and syncing fine.
