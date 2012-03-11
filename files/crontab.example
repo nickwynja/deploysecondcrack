@@ -1,1 +1,2 @@
-*  *  *  *  * /home/blog/secondcrack/engine/update.sh /home/blog/Dropbox/Blog/ /home/blog/secondcrack/
+*  *  *  *  * /home/blog/secondcrack/engine/update.sh /root/Dropbox/Blog /home/blog/secondcrack
+@reboot /home/blog/.dropbox-dist/dropboxd
