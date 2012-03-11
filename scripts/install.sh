@@ -66,15 +66,10 @@ sudo cp /home/blog/deploysecondcrack/files/php.ini /etc/php.ini
 
 cd /home/blog/ ;
 sudo git clone git://github.com/marcoarment/secondcrack.git;
-mkdir /home/blog/Dropbox/Blog/templates/;
-sudo cp /home/blog/secondcrack/example-templates/main.php /home/blog/Dropbox/Blog/templates/main.php;
-sudo cp /home/blog/secondcrack/example-templates/rss.php /home/blog/Dropbox/Blog/templates/rss.php;
-sudo cp /home/blog/deploysecondcrack/files/hello-world.txt /home/blog/Dropbox/Blog/drafts/_publish-now/
 
 # Set up default `update` cron  
   
-sudo cp /home/blog/deploysecondcrack/files/crontab.example /etc/crontab;
-/etc/init.d/crond reload;
+sudo crontab /home/blog/deploysecondcrack/files/crontab.example
 
 # Set config.php
 
