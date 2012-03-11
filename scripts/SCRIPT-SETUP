@@ -67,3 +67,10 @@ vi /etc/php.ini
     AllowOverride None
     Order allow,deny
     Allow from all
+    
+    
+    sudo chmod o+x /home/blog/
+    
+    sudo rm /etc/httpd/conf.d/welcome.conf
+    vi /etc/php.ini
+    short_open_tag = on
