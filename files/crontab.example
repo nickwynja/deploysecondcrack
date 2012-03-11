@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/home/blog/secondcrack
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/home/blog/secondcrack:
 MAILTO=root
 HOME=/
 
