@@ -36,13 +36,13 @@ cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 
 # Install Dropbox service
 
-cd ~; sudo cp ~/deploysecondcrack/files/dropbox-service /etc/init.d/dropbox;
+cd ~; sudo cp ~/deploysecondcrack/config-files/dropbox-service /etc/init.d/dropbox;
 sudo chkconfig --add dropbox;
 sudo chkconfig dropbox on;
 
 # Configure Service
 
-sudo cp ~/deploysecondcrack/files/sysconfig-service /etc/sysconfig/dropbox;
+sudo cp ~/deploysecondcrack/config-files/sysconfig-dropbox /etc/sysconfig/dropbox;
 
 # Install Dropbox CLI
 
@@ -52,19 +52,18 @@ sudo chmod 755 ~/bin/dropbox.py;
 
 # Set up Second Crack `update` cron
   
-sudo crontab ~/deploysecondcrack/files/crontab.example;
+sudo crontab ~/deploysecondcrack/config-files/crontab.example;
 
 # Config Apache with default settings
 
-sudo cp ~/deploysecondcrack/files/httpd.conf /etc/httpd/conf/httpd.conf;
+sudo cp ~/deploysecondcrack/config-files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo service iptables stop;
 sudo rm /etc/httpd/conf.d/welcome.conf;
 sudo chmod o+x ~;
-sudo service httpd start;
 
 # Config PHP settings for short_open_tags
 
-sudo cp ~/deploysecondcrack/files/php.ini /etc/php.ini;
+sudo cp ~/deploysecondcrack/config-files/php.ini /etc/php.ini;
 
 # Install Second Crack
 
@@ -76,7 +75,7 @@ sudo git clone git://github.com/marcoarment/secondcrack.git;
 mkdir -p ~/Dropbox/Blog/templates/;
 sudo cp ~/secondcrack/example-templates/main.php ~/Dropbox/Blog/templates/main.php;
 sudo cp ~/secondcrack/example-templates/rss.php ~/Dropbox/Blog/templates/rss.php;
-sudo cp ~/deploysecondcrack/files/hello-world.txt ~/Dropbox/Blog/drafts/_publish-now/;
-sudo cp ~/deploysecondcrack/files/config.php.example ~/secondcrack/config.php;
+mkdir -p ~/Dropbox/Blog/drafts/_publish-now/;
+sudo cp ~/deploysecondcrack/config-files/hello-world.txt ~/Dropbox/Blog/drafts/_publish-now/;
+sudo cp ~/deploysecondcrack/config-files/config.php.example ~/secondcrack/config.php;
 sudo vi ~/secondcrack/config.php;
-
