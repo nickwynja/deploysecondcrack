@@ -14,10 +14,14 @@ Create the new user with the command `useradd -d /home/blog -m blog && sudo pass
 
     wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install.sh; . ./install.sh
     
-This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take a little while to run, maybe 10-15 minutes, but don't walk away—you'll have to enter `y` a few times when prompted. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack, and `secondcrackdeploy` will also be deployed.
+This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take a little while to run, maybe 10-15 minutes. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack, and `secondcrackdeploy` will also be deployed.
 
 After everything is installed, `/secondcrack/config.php` will be displayed where you need to set `$blog_title`, `$blog_url`, and description of your blog. Press `i` to go into insert mode in Vim to edit your configuration. You can also enter a username and password here if you plan on using the bookmarklets. Exit out of vi by pressing `esc` then type `:wq` and press enter to save and quit.
 
 ## Start Dropbox
 
 After installation, enter the command `/etc/init.d/dropbox start` to start Dropbox. You will be shown a URL you need to copy and paste into your browser to link the server to your account. Make sure you're logged into the account you want to be connected with if you have multiple. Once you link your account, you should see the `Client successfully linked` message. To get back to the command prompt hit ctrl+c. You'll see the message `Session terminated, killing shell... ...killed.` but that's OK, Dropbox should still be running and syncing fine.
+
+# Restart Apache
+
+Everything should be in place now and we just have to start up the Apache web server with this command: `sudo service httpd start`.

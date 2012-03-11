@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/home/blog/secondcrack/engine/
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/home/blog/secondcrack
 MAILTO=root
 HOME=/
 
@@ -13,4 +13,4 @@ HOME=/
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
-  *  *  *  *  * root /home/blog/secondcrack/engine/update.sh /home/blog/Dropbox/Blog /home/blog/secondcrack
+  *  *  *  *  * root /home/blog/secondcrack/engine/update.sh /home/blog/Dropbox/Blog/ /home/blog/secondcrack/

@@ -4,7 +4,7 @@ yum update;
 
 # Install Apache, PHP, Python, Git, and dependancies
 
-yum install httpd php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
+yum install -y httpd php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
 
 # Start Apache on boot
 
@@ -74,10 +74,9 @@ sudo git clone git://github.com/marcoarment/secondcrack.git;
 # Set up default `update` cron  
   
 sudo cp /home/blog/deploysecondcrack/files/example.crontab /etc/crontab;
-sudo service httpd restart;
+/etc/init.d/crond reload;
 
 # Set config.php
 
 sudo cp /home/blog/deploysecondcrack/files/config.php.example /home/blog/secondcrack/config.php;
-sudo vi /home/blog/secondcrack/config.php:
-
+sudo vi /home/blog/secondcrack/config.php;
