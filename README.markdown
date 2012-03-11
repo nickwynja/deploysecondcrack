@@ -14,7 +14,7 @@ Create the new user with the command `useradd -d /home/blog -m blog && sudo pass
 
  Paste the following command and press enter to make the magic happen:
 
-    wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install.sh; . ./install.sh
+    cd ~ ; wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install.sh; . ~/install.sh
     
 This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take a little while to run, maybe 5 minutes. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack, and `secondcrackdeploy` will also be deployed.
 
@@ -22,10 +22,13 @@ After everything is installed, `/secondcrack/config.php` will be displayed where
 
 ## 2. Install Dropbox
 
-    wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install-dropbox.sh; . ./install-dropbox.sh
+    wget http://dl.dropbox.com/u/856720/deploysecondcrack/scripts/install-dropbox.sh; . ~/install-dropbox.sh
 
 
 After installation, enter the command `/etc/init.d/dropbox start` to start Dropbox. You will be shown a URL you need to copy and paste into your browser to link the server to your account. Make sure you're logged into the account you want to be connected with if you have multiple. Once you link your account, you should see the "Client successfully linked" message. You'll see the message "Session terminated, killing shell... ...killed." but that's OK, Dropbox should still be running and syncing fine. To get back to the command prompt hit ctrl+c. 
+
+~/bin/dropbox.py start
+
 
 ## 3. Start Second Crack
 

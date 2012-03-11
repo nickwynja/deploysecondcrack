@@ -14,9 +14,8 @@ wget --no-check-certificate http://github.com/downloads/rvoicilas/inotify-tools/
   cd inotify-tools-3.14;
   ./configure --prefix=/usr --libdir=/lib64;
   sudo make;
-  su -c 'make install';
-  cd ~ ;
-  sudo rm inotify-tools-3.14.tar.gz;
+  sudo make install;
+  cd ~ ; sudo rm inotify-tools-3.14.tar.gz;
 
 # Install start-stop-daemon for use in /etc/init.d/dropbox
 
@@ -31,31 +30,52 @@ cd ~ ; wget http://developer.axis.com/download/distribution/apps-sys-utils-start
 cd ~;
 sudo git clone git://github.com/nickwynja/deploysecondcrack.git;
 
-# Set up Second Crack `update` cron  
+# Install Dropbox
+    
+cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
+
+# Install Dropbox service
+
+cd ~; sudo cp ~/secondcrack/files/dropbox-service /etc/init.d/dropbox;
+sudo chkconfig --add dropbox;
+sudo chkconfig dropbox on;
+
+# Configure Service
+
+sudo cp ~/secondcrack/files/sysconfig-service /etc/sysconfig/dropbox;
+
+# Install Dropbox CLI
+
+mkdir -p ~/bin;
+wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py";
+sudo chmod 755 ~/bin/dropbox.py;  
+
+# Set up Second Crack `update` cron
   
-sudo crontab /home/blog/deploysecondcrack/files/crontab.example;
-mkdir /home/blog/Dropbox/Blog/templates/;
-sudo cp /home/blog/secondcrack/example-templates/main.php /home/blog/Dropbox/Blog/templates/main.php;
-sudo cp /home/blog/secondcrack/example-templates/rss.php /home/blog/Dropbox/Blog/templates/rss.php;
-sudo cp /home/blog/deploysecondcrack/files/hello-world.txt /home/blog/Dropbox/Blog/drafts/_publish-now/
+sudo crontab ~/deploysecondcrack/files/crontab.example;
 
 # Config Apache with default settings
 
-sudo cp /home/blog/deploysecondcrack/files/httpd.conf /etc/httpd/conf/httpd.conf;
+sudo cp ~/deploysecondcrack/files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo service iptables stop;
 sudo rm /etc/httpd/conf.d/welcome.conf;
-sudo chmod o+x /home/blog/;
+sudo chmod o+x ~;
 
 # Config PHP settings for short_open_tags
 
-sudo cp /home/blog/deploysecondcrack/files/php.ini /etc/php.ini
+sudo cp ~/deploysecondcrack/files/php.ini /etc/php.ini;
 
 # Install Second Crack
 
-cd /home/blog/ ;
+cd ~/ ;
 sudo git clone git://github.com/marcoarment/secondcrack.git;
 
-# Set config.php
+# Configure Second Crack
 
-sudo cp /home/blog/deploysecondcrack/files/config.php.example /home/blog/secondcrack/config.php;
-sudo vi /home/blog/secondcrack/config.php;
+mkdir ~/Dropbox/Blog/;
+mkdir ~/Dropbox/Blog/templates/;
+sudo cp ~/secondcrack/example-templates/main.php ~/Dropbox/Blog/templates/main.php;
+sudo cp ~/secondcrack/example-templates/rss.php ~/Dropbox/Blog/templates/rss.php;
+sudo cp ~/deploysecondcrack/files/hello-world.txt ~/Dropbox/Blog/drafts/_publish-now/;
+sudo cp ~/deploysecondcrack/files/config.php.example ~/secondcrack/config.php;
+sudo vi ~/secondcrack/config.php;
