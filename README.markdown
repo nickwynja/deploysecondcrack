@@ -1,6 +1,6 @@
 **Note:** `deploysecondcrack` is tightly configured for CentOS 6.0. This is intended for easy deployment by users not familiar with environment configuration and system administration. This isn't guaranteed to work at all but is most likely to work with  CentOS 6.0 Rackspace instances. 
 
-**If you're new to SSH:** After creating a CentOS 6.0 server, SSH into the box using the IP address and root password you were emailed. To do this enter `ssh root@YOUR.IP.ADDRESS}`. Type `yes` when prompted to add your RSA and your password. When you see the `[root@servername ~]#` prompt, we're ready to go.
+**If you're new to this:** I'll be writing a post at [nickwynja.com/deploysecondcrack](http://nickwynja.com/deploysecondcrack) that will go into more detail about how you can get your hands on a server instance and control it with SSH and Vim.
 
 ## 1. Create 'blog' user account
 
@@ -38,3 +38,8 @@ This will start up the Dropbox daemon that runs in the background.
 Fire up Apache and you're done! 
 
     sudo service httpd start`
+    
+### Notes:
+
+- This configuration does not include much security. In fact, it completely disables the firewall. Maybe sometime in the future I'll add [APF](http://www.rfxn.com/projects/advanced-policy-firewall/) but for now, you're on your own.
+- I'm not a total neckbeard sysadmin. My implementation of the server environment is likely poor. Use it at your own risk.
