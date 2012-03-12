@@ -37,7 +37,7 @@ This will start up the Dropbox daemon that runs in the background.
 
 Fire up Apache and you're done! 
 
-    sudo service httpd start`
+    sudo service httpd start
     
 ## Notes:
 
