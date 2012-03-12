@@ -27,11 +27,11 @@ Dropbox mostly installed but you need to initiate it and link the server to your
 
     ~/.dropbox-dist/dropboxd
 
-You will be given a URL you need to copy and paste into your browser to link your account. Make sure you're logged into the account you want to be connected with if you have multiple.
+You will be given a URL you need to copy and paste into your browser to link your account. Make sure you're logged into the account you want to be connected with if you have multiple. You'll have to quit out of this process with ctrl-c once you've connected your account.
     
     sudo service dropbox start
 
-You'll have to quit out of this process with ctrl-c, and even though you'll get a "FAILED" message, everything should be working fine.
+This will start up the Dropbox daemon and even though you'll get a "FAILED" message, everything should be working fine.
 
 ## 4. Start Apache
 
