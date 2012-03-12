@@ -45,8 +45,8 @@ sudo chkconfig dropbox on;
 # Install Dropbox CLI
 
 mkdir -p ~/bin;
-wget -O ~/bin/dropbox "http://www.dropbox.com/download?dl=packages/dropbox.py";
-sudo chmod 755 ~/bin/dropbox;  
+sudo wget -O /usr/bin/dropbox "http://www.dropbox.com/download?dl=packages/dropbox.py";
+sudo chmod 755 /usr/bin/dropbox;
 
 # Set up Second Crack `update` cron
   
