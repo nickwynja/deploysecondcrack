@@ -5,7 +5,7 @@
 # pidfile: /var/run/dropbox.pid
 # config: /etc/sysconfig/dropbox
 #
- 
+
 ### BEGIN INIT INFO
 # Provides: dropboxd
 # Required-Start: $local_fs $network $syslog
@@ -15,79 +15,81 @@
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: Start up the Dropbox file syncing daemon
-# Description:       Dropbox is a filesyncing sevice provided by dropbox.com
-#                    This service starts up the dropbox daemon.
+# Description: Dropbox is a filesyncing sevice provided by dropbox.com
+# This service starts up the dropbox daemon.
 ### END INIT INFO
- 
+
 # Source function library.
 . /etc/rc.d/init.d/functions
- 
+
 # To configure, add line with DROPBOX_USERS="user1 user2" to /etc/sysconfig/dropbox
 # Probably should use a dropbox group in /etc/groups instead.
- 
+
 [ -f /etc/sysconfig/dropbox ] && . /etc/sysconfig/dropbox
 prog=dropboxd
 lockfile=${LOCKFILE-/var/lock/subsys/$prog}
 config=${CONFIG-/etc/sysconfig/dropbox}
 RETVAL=0
- 
+
 start() {
-    echo -n $"Starting $prog"
-    if [ -z $DROPBOX_USERS ] ; then
-        echo -n ": unconfigured: $config"
-        echo_failure
-        echo
-        rm -f ${lockfile} ${pidfile}
-        RETURN=6
-        return $RETVAL
-    fi
-    for dbuser in $DROPBOX_USERS; do
-        daemon --user $dbuser /bin/sh -c "/home/$dbuser/.dropbox-dist/dropboxd&"
-    done
-    RETVAL=$?
-    echo
-    [ $RETVAL = 0 ] && touch ${lockfile}
-    return $RETVAL
+   echo -n $"Starting $prog"
+   if [ -z $DROPBOX_USERS ] ; then
+      echo -n ": unconfigured: $config"
+      echo_failure
+      echo
+      rm -f ${lockfile} ${pidfile}
+      RETURN=6
+      return $RETVAL
+   fi
+   for dbuser in $DROPBOX_USERS; do
+      daemon --user $dbuser /bin/sh -c "~$dbuser/.dropbox-dist/dropboxd&"
+   done
+   RETVAL=$?
+   echo
+   [ $RETVAL = 0 ] && touch ${lockfile}
+   return $RETVAL
 }
- 
+
 status() {
-    for dbuser in $DROPBOX_USERS; do
-        dbpid=`pgrep -u $dbuser dropbox | grep -v grep`
-        if [ -z $dbpid ] ; then
-            echo "dropboxd for USER $dbuser: not running."
-        else
-            echo "dropboxd for USER $dbuser: running (pid $dbpid)"
-        fi
-    done
+   for dbuser in $DROPBOX_USERS; do
+      dbpid=`pgrep -u $dbuser dropbox | grep -v grep`
+      if [ -z $dbpid ] ; then
+         echo "dropboxd for USER $dbuser: not running."
+      else
+         echo "dropboxd for USER $dbuser: running (pid $dbpid)"
+      fi
+      done
 }
- 
+
 stop() {
-    echo -n $"Stopping $prog"
-    for dbuser in $DROPBOX_USERS; do
-        killproc /home/$dbuser/.dropbox-dist/dropbox
-    done
-    RETVAL=$?
-    echo
-    [ $RETVAL = 0 ] && rm -f ${lockfile} ${pidfile}
+   echo -n $"Stopping $prog"
+   for dbuser in $DROPBOX_USERS; do
+      killproc ~$dbuser/.dropbox-dist/dropbox
+   done
+   RETVAL=$?
+   echo
+   [ $RETVAL = 0 ] && rm -f ${lockfile} ${pidfile}
 }
- 
+
 # See how we were called.
 case "$1" in
-    start)
-        start
-        ;;
-    status)
-        status
-        ;;
-    stop)
-        stop
-        ;;
-    restart)
-        stop
-        start
-        ;;
-    *)
-        echo $"Usage: $prog {start|status|stop|restart}"
-        RETVAL=3
+   start)
+      start
+      ;;
+   status)
+      status
+      ;;
+   stop)
+      stop
+      ;;
+   restart)
+      stop
+      start
+      ;;
+   *)
+      echo $"Usage: $prog {start|status|stop|restart}"
+      RETVAL=3
+
 esac
+
 exit $RETVAL

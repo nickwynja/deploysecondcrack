@@ -37,18 +37,15 @@ cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 # Install Dropbox service
 
 cd ~; sudo cp ~/deploysecondcrack/config-files/dropbox-service /etc/init.d/dropbox;
+sudo chmod 755 /etc/init.d/dropbox
 sudo chkconfig --add dropbox;
 sudo chkconfig dropbox on;
-
-# Configure Service
-
-sudo cp ~/deploysecondcrack/config-files/sysconfig-dropbox /etc/sysconfig/dropbox;
 
 # Install Dropbox CLI
 
 mkdir -p ~/bin;
-wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py";
-sudo chmod 755 ~/bin/dropbox.py;  
+wget -O ~/bin/dropbox "http://www.dropbox.com/download?dl=packages/dropbox.py";
+sudo chmod 755 ~/bin/dropbox;  
 
 # Set up Second Crack `update` cron
   
