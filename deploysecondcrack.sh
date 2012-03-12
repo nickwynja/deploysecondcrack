@@ -37,6 +37,7 @@ cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 # Install Dropbox service
 
 cd ~; sudo cp ~/deploysecondcrack/config-files/dropbox-service /etc/init.d/dropbox;
+sudo cp ~/deploysecondcrack/config-files/sysconfig-dropbox /etc/sysconfig/dropbox;
 sudo chmod 755 /etc/init.d/dropbox
 sudo chkconfig --add dropbox;
 sudo chkconfig dropbox on;

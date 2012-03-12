@@ -31,8 +31,10 @@ You will be given a URL you need to copy and paste into your browser to link you
     
     sudo service dropbox start
 
-This will start up the Dropbox daemon and even though you'll get a "FAILED" message, everything should be working fine.
+This will start up the Dropbox daemon that runs in the background.
 
 ## 4. Start Apache
 
-Now that everything is in place, lets restart Apache with the command `sudo service httpd start`.
+Fire up Apache and you're done! 
+
+    sudo service httpd start`
