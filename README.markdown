@@ -54,7 +54,7 @@ Fire up Apache and you're done!
 ## Notes:
 
 - See Marco's documentation on [Second Crack](https://github.com/marcoarment/secondcrack) for the basics of how to create new posts.
-- It's a know bug right now that previews of drafts aren't being creating in `/drafts/_previews/`.
+- If previews of drafts aren't being creating in `/drafts/_previews/` make sure you are using the correct extension that's listed as `$post_extension` in `config.php`.
 - This configuration does not include much security. In fact, it completely disables the firewall. Maybe sometime in the future I'll add [APF](http://www.rfxn.com/projects/advanced-policy-firewall/) but for now, you're on your own.
 - I'm not a total neckbeard sysadmin. My implementation of the server environment is likely poor. Use it at your own risk (or fix my code if you know better).
 - Neither myself or Marco are responsible for anything that goes wrong. I'll try and help if I can but don't email him.
