@@ -2,8 +2,7 @@
 
 **If you're new to this:** I'll be writing a post at [nickwynja.com/deploysecondcrack](http://nickwynja.com/deploysecondcrack) that will go into more detail about how you can get your hands on a server instance and control it with SSH and Vim.
 
-1. Create 'blog' user account
-====
+### 1. Create 'blog' user account
 
 **Note:** For ease of setup, we will use the username 'blog'. Changing this to your name will break other deploy scripts.
 
@@ -12,8 +11,7 @@
 
 Next switch to your new 'blog' user account with the command `su blog`.
 
-2. Install Environment, Dropbox, Second Crack, and deploysecondcrack
-====
+### 2. Install Environment, Dropbox, Second Crack, and deploysecondcrack
 
  Paste the following command and press enter to make the magic happen. You'll be prompted for your password.
 
@@ -29,8 +27,8 @@ Optional: If you want some basic styling out of the box, you'll have to include 
     
 We use a hardcoded URL here rather than a relative path so that our stylesheet can be found when you preview posts locally out of the `_previews` folder. 
 
-3. Initiate Dropbox
-====
+### 3. Initiate Dropbox
+
 
 Dropbox mostly installed but you need to initiate it and link the server to your account. Enter this command:
 
@@ -43,8 +41,7 @@ You will be given a URL you need to copy and paste into your browser to link you
 This will start up the Dropbox daemon that runs in the background.
 
 
-4. Start Apache
-====
+### 4. Start Apache
 
 Fire up Apache and you're done! 
 
