@@ -1,0 +1,232 @@
+/* This stylesheet is based on the template from Marco.org. All credit goes to him. */
+
+body {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    word-wrap: break-word;
+}
+
+#mastheadbackground {
+    background-color: #fff;
+    height: 180px;
+    margin-bottom: -180px;
+}
+
+a, a:active, a:visited {
+    color: blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+}
+
+/* Site title */
+#masthead {
+    color: #000;
+}
+
+#masthead h1 {
+    font-weight: normal;
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0.5em;
+}
+
+#masthead a,
+#masthead a:active,
+#masthead a:visited { color: blue; }
+
+#masthead h1 a,
+#masthead h1 a:active,
+#masthead h1 a:visited {
+    text-decoration: none;
+}
+
+#masthead p { margin: 0; padding: 0; }
+#masthead nav { display: block; margin: 0; padding: 1em 0; color: blue; }
+
+/* Posts */
+
+article {
+    display: block;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+    margin-top: 3em;
+}
+
+    article header { color: #888; }
+    article header p { margin: 0; }
+    article header a { text-decoration: none; }
+
+/* Link posts */
+
+article.link header h2 { font-size: 1.25em; }
+
+article.link header h2 a,
+article.link header h2 a:active,
+article.link header h2 a:visited { 
+    color: blue;
+    text-decoration: underline; 
+}
+
+/* Block layout */
+
+#masthead {
+    width: 310px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+footer {
+    margin: 2em 0;
+    font-size: 13px;
+}
+
+    footer p { margin: 0.5em; }
+
+section#posts {
+    position: relative;
+    display: block;
+    width: 520px;
+    margin: 0 auto;
+}
+
+/* Post title */
+h2 {
+    font-weight: normal;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    line-height: 1.25;
+}
+
+h2 a,
+h2 a:active,
+h2 a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+/* In posts */
+
+h3 {
+    font-size: 1em;
+}
+
+.fin {
+    text-align: center;
+    font-size: 1.5em;
+    color: #f4f4f4;
+    margin-top: 1em;
+}
+
+.linkarrow {
+    color: #aaa;
+}
+
+blockquote { 
+    margin: 0 18px 18px 18px;
+    color:#666;
+    padding-left:10px;
+    border-left:4px solid #eee;
+}
+
+img, figure { max-width: 100%; }
+
+figure {
+    padding: 5px; 
+    border: 1px solid #eee; 
+    margin: 2em auto; 
+    background-color: #f4f4f4; 
+}
+    figure.right { float: right; margin-left: 2em; margin-right: 0; margin-top: 0; max-width: 50%; }
+figure img { border: 1px solid #ccc; }
+figcaption { text-align: center; font-size: 0.85em; color: #555; }
+
+li {
+    margin: 1em 0;
+}
+
+sup, sub {
+    padding: 0 0.2em;
+    height: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    _vertical-align: bottom;
+    position: relative;
+}
+sup { bottom: 0.5ex; }
+sub { top: .5ex; }
+
+pre {
+    font-size: 11px;
+    background-color: #eee;
+    padding: 1em;
+    overflow: auto;
+}
+
+.noborder img, ._noborder img { border: 0 !important; padding: 0 !important; background-color: transparent; }
+.post img { max-width: 100%; }
+
+.footnotes { 
+    margin-top: 3em;
+    font-size: 14px;
+}
+.footnotes hr { margin-bottom: 1em; }
+
+.footnotes a[rev=footnote] { text-decoration: none; }
+
+}
+
+.permalink { text-decoration: none; }
+
+/* 500-pixel layout for smaller screens */
+@media (max-width: 680px) {
+    section#posts { width: 500px; }
+
+    #deckad { width: 175px; }
+
+    #mastheadbackground {
+        height: 190px;
+        margin-bottom: -190px;
+    }
+    
+    #masthead {
+        height: 190px;
+    }
+}
+
+/* 240-pixel layout for iPhone-sized screens */
+@media (max-width: 520px) {
+    section#posts { width: 300px; }
+
+    #masthead {
+        width: 100%;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    #mastheadbackground {
+        height: 280px;
+        margin-bottom: -280px;
+    }
+    
+    #masthead {
+        height: 280px;
+    }
+
+    #deckad { 
+        font-size: 12px;
+        width: 100%;
+        left: 0px;
+        top: 150px;
+    }
+
+    figcaption { font-size: 1em; }
+    figure.right { float: none; width: 100%; margin-left: 0; margin-right: 0; text-align: center; }
+}

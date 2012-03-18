@@ -34,10 +34,11 @@ sudo git clone git://github.com/nickwynja/deploysecondcrack.git;
     
 cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 sudo mkdir -p ~/Dropbox;
-sudo chown -R $USER ~/Dropbox/;
+sudo chown -R blog ~/Dropbox;
 sudo chmod -R u+rw ~/Dropbox;
-sudo chown -R $USER ~/.dropbox;
+sudo chown -R blog ~/.dropbox;
 sudo chmod -R u+rw ~/.dropbox;
+sudo chmod -R o+x  ~/Dropbox;
 
 # Install Dropbox service
 
@@ -78,7 +79,9 @@ sudo git clone git://github.com/marcoarment/secondcrack.git;
 sudo mkdir -p ~/Dropbox/Blog/templates/;
 sudo cp ~/secondcrack/example-templates/main.php ~/Dropbox/Blog/templates/main.php;
 sudo cp ~/secondcrack/example-templates/rss.php ~/Dropbox/Blog/templates/rss.php;
-sudo mkdir -p ~/Dropbox/Blog/drafts/_publish-now/;
-sudo cp ~/deploysecondcrack/config-files/hello-world.txt ~/Dropbox/Blog/drafts/_publish-now/;
+sudo mkdir -p ~/Dropbox/Blog/assets/css/;
+sudo cp ~/deploysecondcrack/config-files/main.css ~/Dropbox/Blog/assets/css/main.css;
+sudo ln -s ~/Dropbox/Blog/assets ~/secondcrack/www;
+sudo chmod -R o+x  ~/Dropbox;
 sudo cp ~/deploysecondcrack/config-files/config.php.example ~/secondcrack/config.php;
 sudo vi ~/secondcrack/config.php;
