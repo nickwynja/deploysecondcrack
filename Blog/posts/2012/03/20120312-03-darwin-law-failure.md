@@ -1,7 +1,0 @@
-Darwin's Law of Failure
-========================
-This post is in response to jonathan kochis's article, [the disturbing culture of failure](http: //jonathankochis.com/the-disturbing-culture-of-failure/). Kochis lays out the how a culture that encourages failure negatively impacts business—and he's right—but let me add my perspective on why I think this culture is in place and why it's necessary. Let's call it Darwin's Law of Failure.
-Failure is something that has become a part of the startup culture and in-turn, embraced. in reality, failing is inevitable but this culture encourages pushing harder and faster in spite of fearing failure, even when pushing harder and faster makes failure more likely. there's two reasons this happens: competition for investor attention, which these companies feed off of, is more often grabbed by companies who build products faster and cheaper, and secondly, that failure needs to happen because the markets can't bear more than a few startups actually taking off.
-Approaching things with the significance that they deserve comes from believing that what you do is a long-term cultivation of relationships, learning, and ideas and if your approach is that of a disposable startup where you "fail fast, fail often" than you'll take the bruises of a disposable startup. make your approach one where you're [farming rather than mining](http: //blog.wilshipley.com/2011/04/success-and-farming-vs-mining.html).
-Published: 2012-03-12 07:57:24pm
-
