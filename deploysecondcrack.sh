@@ -81,7 +81,8 @@ sudo cp ~/secondcrack/example-templates/main.php ~/Dropbox/Blog/templates/main.p
 sudo cp ~/secondcrack/example-templates/rss.php ~/Dropbox/Blog/templates/rss.php;
 sudo mkdir -p ~/Dropbox/Blog/assets/css/;
 sudo cp ~/deploysecondcrack/config-files/main.css ~/Dropbox/Blog/assets/css/main.css;
-sudo ln -s ~/Dropbox/Blog/assets ~/secondcrack/www;
+sudo mkdir -p ~/secondcrack/www/;
+sudo ln -s ~/Dropbox/Blog/assets ~/secondcrack/www/assets;
 sudo chmod -R o+x  ~/Dropbox;
 sudo cp ~/deploysecondcrack/config-files/config.php.example ~/secondcrack/config.php;
 sudo vi ~/secondcrack/config.php;
