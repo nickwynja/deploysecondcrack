@@ -85,8 +85,8 @@ sudo cp ~/deploysecondcrack/config-files/main.css ~/Dropbox/Blog/assets/css/main
 sudo mkdir -p ~/secondcrack/www/;
 sudo ln -s ~/Dropbox/Blog/assets ~/secondcrack/www/assets;
 sudo chmod -R o+x  ~/Dropbox;
-sudo chown -R blog:blog ~/secondcrack/
-sudo chown -R blog:blog ~/Dropbox/
-sudo chown -R blog:blog ~/deploysecondcrack
+sudo chown -R blog:blog ~/secondcrack/;
+sudo chown -R blog:blog ~/Dropbox/;
+sudo chown -R blog:blog ~/deploysecondcrack;
 sudo cp ~/deploysecondcrack/config-files/config.php.example ~/secondcrack/config.php;
 sudo vi ~/secondcrack/config.php;
