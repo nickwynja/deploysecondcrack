@@ -53,6 +53,7 @@ Fire up Apache and you're done!
 - See Marco's documentation on [Second Crack](https://github.com/marcoarment/secondcrack) for the basics of how to create new posts.
 - If previews of drafts aren't being creating in `/drafts/_previews/` make sure you are using the correct extension that's listed as `$post_extension` in `config.php`.
 - If you are having trouble with posts not being created then run `dropbox status` to check if there is a problem syncing. If you get a message like `Can't sync "draft-test.md": permission denied` then check `ls -l /home/blog/Dropbox/Blog/`. All of the folders should belong to blog, not root. To fix this enter `sudo chown -R blog:blog /home/blog/Dropbox/Blog/`.
+- If the assets symlink isn't working, try `sudo chmod -R o+x  ~/Dropbox`. This should give apache the permissions to follow the symlink.
 - This configuration does not include much security. In fact, it completely disables the firewall. Maybe sometime in the future I'll add [APF](http://www.rfxn.com/projects/advanced-policy-firewall/) but for now, you're on your own.
 - I'm not a total neckbeard sysadmin. My implementation of the server environment is likely poor. Use it at your own risk (or fix my code if you know better).
 - Neither myself or Marco are responsible for anything that goes wrong. I'll try and help if I can but don't email him.
